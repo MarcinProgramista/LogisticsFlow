@@ -55,7 +55,26 @@ LogisticsFlow/
 
 **Work in Progress**
 
-The project is currently in its initial development stage. Features will be implemented incrementally.
+### Implemented
+- Initial FastAPI application setup.
+- Health check endpoint (`GET /health`).
+- Interactive API documentation (Swagger UI).
+- GitHub repository and project structure.
+
+### In Progress
+- Business requirements analysis.
+- Transport order data model design.
+- Database architecture planning.
+
+### Planned
+- PostgreSQL integration.
+- SQLAlchemy ORM and Alembic migrations.
+- Customer management.
+- Transport order management (CRUD).
+- Cargo and route management.
+- Drivers and vehicles management.
+- Transport tracking and event reporting.
+- Automated tests with pytest.
 
 ## Author
 
