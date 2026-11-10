@@ -14,8 +14,13 @@ class Customer(Base):
     email: Mapped[str] = mapped_column(String(255), nullable=False)
     phone: Mapped[str] = mapped_column(String(20), nullable=False)
     contact_person: Mapped[str] = mapped_column(String(150), nullable=False)
-    address: Mapped[str] = mapped_column(String(255), nullable=False)
-    tax_id: Mapped[str] = mapped_column(String(10), unique=True, nullable=False)
+    street: Mapped[str] = mapped_column(String(150), nullable=False)
+    building_number: Mapped[str] = mapped_column(String(20), nullable=False)
+    apartment_number: Mapped[str] = mapped_column(String(20), nullable=True)
+    postal_code: Mapped[str] = mapped_column(String(20), nullable=False)
+    city: Mapped[str] = mapped_column(String(100), nullable=False)
+    country: Mapped[str] = mapped_column(String(100), nullable=False)
+    tax_id: Mapped[str] = mapped_column(String(30), unique=True, nullable=False)
 
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
