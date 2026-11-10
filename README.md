@@ -56,19 +56,26 @@ LogisticsFlow/
 **Work in Progress**
 
 ### Implemented
+
 - Initial FastAPI application setup.
 - Health check endpoint (`GET /health`).
 - Interactive API documentation (Swagger UI).
 - GitHub repository and project structure.
+- PostgreSQL database setup.
+- SQLAlchemy engine and session configuration.
+- Environment variable management using `python-dotenv`.
+- Successful PostgreSQL connection test.
 
 ### In Progress
+
 - Business requirements analysis.
-- Transport order data model design.
+- Customer data model design.
 - Database architecture planning.
 
 ### Planned
-- PostgreSQL integration.
-- SQLAlchemy ORM and Alembic migrations.
+
+- SQLAlchemy ORM models.
+- Alembic database migrations.
 - Customer management.
 - Transport order management (CRUD).
 - Cargo and route management.
