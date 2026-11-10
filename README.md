@@ -32,6 +32,7 @@ The main goal is to build a REST API that supports transport order management, s
 - FastAPI
 - PostgreSQL
 - SQLAlchemy
+- Alembic
 - Pydantic
 - Pytest
 - Git
@@ -41,11 +42,24 @@ The main goal is to build a REST API that supports transport order management, s
 ```text
 LogisticsFlow/
 ├── app/
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── customer.py
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   └── customer.py
 │   ├── __init__.py
+│   ├── database.py
 │   └── main.py
 ├── docs/
-│   └── images/
-│       └── logisticsflow-banner.png
+│   ├── images/
+│   │   └── logisticsflow-banner.png
+│   └── LogisticsFlow_baza_danych_customers_notatki.pdf
+├── migrations/
+│   ├── versions/
+│   ├── env.py
+│   └── script.py.mako
+├── alembic.ini
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -65,23 +79,28 @@ LogisticsFlow/
 - SQLAlchemy engine and session configuration.
 - Environment variable management using `python-dotenv`.
 - Successful PostgreSQL connection test.
+- SQLAlchemy Customer model.
+- Alembic migration creating the `customers` table.
+- Pydantic schemas for customer data:
+  - `CustomerCreate` – input data validation.
+  - `CustomerRead` – response data validation.
+- Email validation using `EmailStr`.
+- Pydantic configuration with `ConfigDict(from_attributes=True)`.
+- Customer schema validation tests.
 
 ### In Progress
 
-- Business requirements analysis.
-- Customer data model design.
-- Database architecture planning.
+- Implementing database session dependency for FastAPI.
+- Implementing customer CRUD endpoints.
 
 ### Planned
 
-- SQLAlchemy ORM models.
-- Alembic database migrations.
-- Customer management.
+- Customer management API.
 - Transport order management (CRUD).
 - Cargo and route management.
 - Drivers and vehicles management.
 - Transport tracking and event reporting.
-- Automated tests with pytest.
+- Automated tests with Pytest.
 
 ## Author
 
