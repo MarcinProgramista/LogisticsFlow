@@ -11,8 +11,14 @@ class Customer(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     company_name: Mapped[str] = mapped_column(String(255), nullable=False)
-    email: Mapped[str] = mapped_column(String(255), nullable=False)
-    phone: Mapped[str] = mapped_column(String(20), nullable=False)
+    email: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True
+    )
+    phone: Mapped[str | None] = mapped_column(
+        String(20),
+        nullable=True
+    )
     contact_person: Mapped[str] = mapped_column(String(150), nullable=False)
     street: Mapped[str] = mapped_column(String(150), nullable=False)
     building_number: Mapped[str] = mapped_column(String(20), nullable=False)
@@ -21,7 +27,11 @@ class Customer(Base):
     city: Mapped[str] = mapped_column(String(100), nullable=False)
     country: Mapped[str] = mapped_column(String(100), nullable=False)
     tax_id: Mapped[str] = mapped_column(String(30), unique=True, nullable=False)
-
+    payment_terms: Mapped[int] = mapped_column(
+        Integer,
+        nullable=False,
+        default=30
+    )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         default=lambda: datetime.now(timezone.utc),
