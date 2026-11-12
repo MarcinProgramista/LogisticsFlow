@@ -96,7 +96,7 @@ def test_customer_create_default_payment_terms():
         country="PL",
         tax_id="1234567890" 
         )
-    assert customer.payment_terms == 30
+    assert customer.payment_terms == 45
 
 def test_customer_create_invalid_payment_terms():
     with pytest.raises(ValidationError):

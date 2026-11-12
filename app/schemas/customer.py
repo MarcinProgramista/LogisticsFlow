@@ -13,7 +13,7 @@ class CustomerCreate(BaseModel):
     postal_code: str
     city: str
     country: str
-    payment_terms: int = Field(default=30, gt=0)
+    payment_terms: int = Field(default=45, gt=0)
     tax_id: str
 
 

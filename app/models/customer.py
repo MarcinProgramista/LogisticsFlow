@@ -30,7 +30,7 @@ class Customer(Base):
     payment_terms: Mapped[int] = mapped_column(
         Integer,
         nullable=False,
-        default=30
+        default=45
     )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
